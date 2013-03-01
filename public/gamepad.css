@@ -1,0 +1,157 @@
+.gamepad-icons b {
+    font-family: arial;
+    display: inline-block;
+    color: #444;
+    border: 2px solid #555;
+    background-color: #888;
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    margin: 0.1em;
+    position: relative;
+}
+
+.gamepad-icons b:before {
+    display: block;
+    width: 2em;
+    position: absolute;
+    content: attr(data-id);
+    text-align: center;
+    line-height: 2em;
+}
+
+.gamepad-icons b.pressed:before {
+    color: #fff;
+}
+
+/* XBox contoller buttons */
+.gamepad-icons.xbox b[data-id="1"] { background-color: #7D7; }
+.gamepad-icons.xbox b[data-id="1"]:before { content: "A"; }
+
+.gamepad-icons.xbox b[data-id="2"] { background-color: #D77; }
+.gamepad-icons.xbox b[data-id="2"]:before { content: "B"; }
+
+.gamepad-icons.xbox b[data-id="3"] { background-color: #77D; }
+.gamepad-icons.xbox b[data-id="3"]:before { content: "X"; }
+
+.gamepad-icons.xbox b[data-id="4"] { background-color: #DD7; }
+.gamepad-icons.xbox b[data-id="4"]:before { content: "Y"; }
+
+.gamepad-icons.xbox b[data-id="5"] {
+    background-color: #EEE;
+    border-radius: 0.5em;
+    width: 3em;
+    height: 1.5em;
+    -webkit-transform: perspective(100) rotateY(-20deg);
+}
+.gamepad-icons.xbox b[data-id="5"]:before { 
+    content: "LB";
+    width: 3em;
+    line-height: 1.5em;
+}
+
+.gamepad-icons.xbox b[data-id="6"] {
+    background-color: #EEE;
+    border-radius: 0.5em;
+    width: 3em;
+    height: 1.5em;
+    -webkit-transform: perspective(100) rotateY(20deg);
+}
+.gamepad-icons.xbox b[data-id="6"]:before {
+    content: "RB";
+    width: 3em;
+    line-height: 1.5em;
+}
+
+.gamepad-icons.xbox b[data-id="7"] {
+    background-color: #EEE;
+    border-radius: 0.5em;
+    width: 1.5em;
+    height: 3em;
+    -webkit-transform: perspective(100) rotateX(-20deg);
+}
+.gamepad-icons.xbox b[data-id="7"]:before {
+    content: "LT";
+    width: 1.5em;
+    line-height: 3em;
+}
+.gamepad-icons.xbox b[data-id="8"] {
+    background-color: #EEE;
+    border-radius: 0.5em;
+    width: 1.5em;
+    height: 3em;
+    -webkit-transform: perspective(100) rotateX(-20deg);
+}
+.gamepad-icons.xbox b[data-id="8"]:before {
+    content: "RT";
+    width: 1.5em;
+    line-height: 3em;
+}
+
+.gamepad-icons.xbox b[data-id="9"],
+.gamepad-icons.xbox b[data-id="10"] { 
+    background-color: #EEE;
+    height: 1.5em;
+}
+.gamepad-icons.xbox b[data-id="9"]:before { 
+    content: "◄"; 
+    line-height: 1.5em;
+}
+.gamepad-icons.xbox b[data-id="10"]:before { 
+    content: "►";
+    line-height: 1.5em;
+}
+
+.gamepad-icons.xbox b[data-id="11"] { background-color: #888; }
+.gamepad-icons.xbox b[data-id="11"]:before { content: "LS"; }
+
+.gamepad-icons.xbox b[data-id="12"] { background-color: #888; }
+.gamepad-icons.xbox b[data-id="12"]:before { content: "RS"; }
+
+.gamepad-icons.xbox b[data-id="13"] { 
+    background-color: #888;
+    border-radius: 0.5em 0.5em 0 0;
+    -webkit-transform: perspective(100) rotateX(35deg);
+    border-bottom: 0;
+    width: 1.5em;
+}
+.gamepad-icons.xbox b[data-id="13"]:before { 
+    content: "▲"; 
+    width: 1.5em;
+}
+
+.gamepad-icons.xbox b[data-id="14"] {
+    background-color: #888;
+    border-radius: 0 0 0.5em 0.5em;
+    -webkit-transform: perspective(100) rotateX(-35deg);
+    border-top: 0;
+    width: 1.5em;
+}
+.gamepad-icons.xbox b[data-id="14"]:before { 
+    content: "▼";
+    width: 1.5em; 
+}
+
+.gamepad-icons.xbox b[data-id="15"] { 
+    background-color: #888;
+    border-radius: 0.5em 0 0 0.5em;
+    -webkit-transform: perspective(100) rotateY(-35deg);
+    border-right: 0;
+    height: 1.5em;
+}
+.gamepad-icons.xbox b[data-id="15"]:before { 
+    content: "◄";
+    line-height: 1.5em;
+}
+
+.gamepad-icons.xbox b[data-id="16"] {
+    background-color: #888;
+    border-radius: 0 0.5em 0.5em 0;
+    -webkit-transform: perspective(100) rotateY(35deg);
+    border-left: 0;
+    height: 1.5em;
+}
+.gamepad-icons.xbox b[data-id="16"]:before { 
+    content: "►"; 
+    line-height: 1.5em;
+}

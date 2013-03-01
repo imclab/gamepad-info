@@ -27,8 +27,144 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <html>
     <head>
         <title>Gamepad Info</title>
+        
+        <link href="gamepad.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <h1>Gamepad Info</h1>
+        
+        <h2>Icon Test</h2>
+        <div class="gamepad-icons">
+            <b data-id="1"></b>
+            <b data-id="2"></b>
+            <b data-id="3"></b>
+            <b data-id="4"></b>
+            <b data-id="5"></b>
+            <b data-id="6"></b>
+            <b data-id="7"></b>
+            <b data-id="8"></b>
+            <b data-id="9"></b>
+            <b data-id="10"></b>
+            <b data-id="11"></b>
+            <b data-id="12"></b>
+            <b data-id="13"></b>
+            <b data-id="14"></b>
+            <b data-id="15"></b>
+            <b data-id="16"></b>
+        </div>
+        
+        <div class="gamepad-icons standard">
+            <b data-id="1"></b>
+            <b data-id="2"></b>
+            <b data-id="3"></b>
+            <b data-id="4"></b>
+            <b data-id="5"></b>
+            <b data-id="6"></b>
+            <b data-id="7"></b>
+            <b data-id="8"></b>
+            <b data-id="9"></b>
+            <b data-id="10"></b>
+            <b data-id="11"></b>
+            <b data-id="12"></b>
+            <b data-id="13"></b>
+            <b data-id="14"></b>
+            <b data-id="15"></b>
+            <b data-id="16"></b>
+        </div>
+        
+        <div class="gamepad-icons xbox">
+            <b data-id="1"></b>
+            <b data-id="2"></b>
+            <b data-id="3"></b>
+            <b data-id="4"></b>
+            <b data-id="5"></b>
+            <b data-id="6"></b>
+            <b data-id="7"></b>
+            <b data-id="8"></b>
+            <b data-id="9"></b>
+            <b data-id="10"></b>
+            <b data-id="11"></b>
+            <b data-id="12"></b>
+            <b data-id="13"></b>
+            <b data-id="14"></b>
+            <b data-id="15"></b>
+            <b data-id="16"></b>
+        </div>
+        
+        <div class="gamepad-icons playstation">
+            <b data-id="1"></b>
+            <b data-id="2"></b>
+            <b data-id="3"></b>
+            <b data-id="4"></b>
+            <b data-id="5"></b>
+            <b data-id="6"></b>
+            <b data-id="7"></b>
+            <b data-id="8"></b>
+            <b data-id="9"></b>
+            <b data-id="10"></b>
+            <b data-id="11"></b>
+            <b data-id="12"></b>
+            <b data-id="13"></b>
+            <b data-id="14"></b>
+            <b data-id="15"></b>
+            <b data-id="16"></b>
+        </div>
+        
+        <script>
+var gamepadSupported = true;
+if(!navigator.getGamepads) {
+    navigator.getGamepads = (function() {
+        // These are the functions that match the spec, and should be preferred
+        if("webkitGetGamepads" in navigator) {
+            return navigator.webkitGetGamepads;
+        }
+        if("mozGetGamepads" in navigator) {
+            return navigator.mozGetGamepads;
+        }
+
+        // Older property-based methods
+        if("webkitGamepads" in navigator) {
+            return function() { return navigator.webkitGamepads; };
+        }
+        if("mozGamepads" in navigator) {
+            return function() { return navigator.mozGamepads; };
+        }
+
+        // Not supported, return empty array
+        gamepadSupported = false;
+        var gamepads = [];
+        return function() { return gamepads; };
+    })();
+}
+
+if(!gamepadSupported) {
+    //TODO: Display unsupported message
+}
+
+function update() {
+    var gamepads = navigator.getGamepads();
+    for(var i = 0; i < gamepads.length; ++i) {
+        var gamepad = gamepads[i];
+        if(!gamepad) { continue; }
+        
+        for(var j = 0; j < gamepad.buttons.length; ++j) {
+            var elements = document.querySelectorAll("b[data-id='" + (j+1) + "']");
+            var value = gamepad.buttons[j];
+            if(value) {
+                for(var k = 0; k < elements.length; ++k) {
+                    elements[k].classList.add("pressed");
+                }
+            } else {
+                for(var k = 0; k < elements.length; ++k) {
+                    elements[k].classList.remove("pressed");
+                }
+            }
+        }
+    }
+    webkitRequestAnimationFrame(update);
+}
+
+webkitRequestAnimationFrame(update);
+        </script>
     </body>
 </html>
