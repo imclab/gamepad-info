@@ -2,7 +2,7 @@
     font-family: arial;
     display: inline-block;
     color: #444;
-    border: 2px solid #555;
+    border: 0.2em solid #555;
     background-color: #888;
     width: 2em;
     height: 2em;
@@ -102,10 +102,7 @@
     line-height: 1.5em;
 }
 
-.gamepad-icons.xbox b[data-id="11"] { background-color: #888; }
 .gamepad-icons.xbox b[data-id="11"]:before { content: "LS"; }
-
-.gamepad-icons.xbox b[data-id="12"] { background-color: #888; }
 .gamepad-icons.xbox b[data-id="12"]:before { content: "RS"; }
 
 .gamepad-icons.xbox b[data-id="13"] { 
@@ -155,3 +152,57 @@
     content: "►"; 
     line-height: 1.5em;
 }
+
+/* Playstation contoller buttons */
+.gamepad-icons.playstation b {
+    background-color: #484848;
+    border-color: #333;
+}
+.gamepad-icons.playstation b:before {
+    color: #fff;
+}
+
+.gamepad-icons.playstation b[data-id="1"]:before {
+    color: #8E98BC;
+    content: "⨯";
+    -webkit-transform: scale(1.8);
+}
+.gamepad-icons.playstation b[data-id="2"]:before {
+    color: #A65E5F;
+    content: "◯"; 
+    -webkit-transform: scale(1.4);
+}
+.gamepad-icons.playstation b[data-id="3"]:before {
+    color: #BC86AA;
+    content: "◻";
+    -webkit-transform: scale(1.5);
+}
+.gamepad-icons.playstation b[data-id="4"]:before {
+    color: #6FD0BD;
+    content: "△";
+    -webkit-transform: scale(1.4);
+}
+
+.gamepad-icons.playstation b[data-id="9"] {
+    height: 1.5em;
+    border-radius: 2px;
+}
+.gamepad-icons.playstation b[data-id="10"] {
+    border-top: 0.75em solid transparent;
+    border-left: 2em solid #484848;
+	border-bottom: 0.75em solid transparent;
+    border-right: 0em solid transparent;
+    background-color: transparent;
+    width: 0;
+    height: 0;
+    border-radius: 0;
+}
+.gamepad-icons.playstation b[data-id="9"]:before { 
+    display: none;
+}
+.gamepad-icons.playstation b[data-id="10"]:before { 
+    display: none;
+}
+
+.gamepad-icons.playstation b[data-id="11"]:before { content: "LS"; }
+.gamepad-icons.playstation b[data-id="12"]:before { content: "RS"; }
